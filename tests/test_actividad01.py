@@ -1,21 +1,13 @@
 import pytest
-from src.actividad01 import dividir
-
+from src.actividad01 import años_cumplidos
 @pytest.mark.parametrize(
-    "input_dividendo, input_divisor, expected",
+    "input_edad, expected",
     [
-        (100, 4, 25),
-        (7.5623, 2.356, 3.21),
-        (5, 5, 1),
-        (3, 2, 1.5),
-        (298.563, 44.711, 6.68),
-        (-88.35, 12.88, -6.86)
+        (3, "1\n2\n3\n"),
+        (4, "1\n2\n3\n4\n"),
+        (2, "1\n2\n"),
+        (6, "1\n2\n3\n4\n5\n6\n")
     ]
 )
-def test_dividir_params(input_dividendo, input_divisor, expected):
-    assert dividir(input_dividendo, input_divisor) == expected
-
-
-def test_dividir_ZeroDivisionError():
-    with pytest.raises(ZeroDivisionError):
-        dividir(1200.456, 0)
+def test_años_complidos_params(input_edad, expected):
+    assert años_cumplidos(input_edad) == expected
