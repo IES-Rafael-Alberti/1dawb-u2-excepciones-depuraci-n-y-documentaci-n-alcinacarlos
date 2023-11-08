@@ -1,4 +1,5 @@
-from actividad01 import pedirint
+if __name__ == "__main__":
+    from actividad01 import pedirint
 
 def impares(num:int) -> str:
     """
@@ -11,12 +12,8 @@ def impares(num:int) -> str:
     
     resultado = ""
     for n in range(1, num + 1, 2):
-        if n != num - 1:
-            resultado += str(n)+ ", "
-        else:
-            resultado += str(n)
-            
-    return resultado
+        resultado += str(n)+ ", "
+    return resultado[:-2]
 
 def main():
     numero = pedirint("Introduce un numero (no puede ser negativa): ")

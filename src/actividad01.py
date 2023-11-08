@@ -11,7 +11,9 @@ def pedirint(msg: str) -> int:
     try:
         numero = int(input(msg))
         if numero <= 0:
-            raise ValueError("No puedes introducir un número negativo")
+            raise NameError("**Error** No puedes introducir un número negativo")
+    except NameError as e:
+        print(e)
     except:
         print("**Error** Edad introducido no válido")
     return numero
@@ -27,7 +29,7 @@ def años_cumplidos(edad:int) -> str:
     if edad != None:
         años_cumplidos = ""
         for i in range(1, edad + 1):
-            años_cumplidos += str(i)+ "\n"
+            años_cumplidos += str(i) + "\n"
         return años_cumplidos
 
 def main():
