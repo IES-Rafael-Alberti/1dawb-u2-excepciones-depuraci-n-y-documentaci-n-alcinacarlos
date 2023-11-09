@@ -1,4 +1,12 @@
-def algoritmo_burbuja(lista):
+def algoritmo_burbuja(lista:list) -> list:
+    """Realiza el algoritmo burbuja
+
+    Args:
+        lista (list): lista a realizar el algoritmo.
+    
+    Returns:
+        list: lista resuelta por el algoritmo.
+    """
     n = len(lista)
     for i in range(n):
         for x in range(0, n-i-1):
